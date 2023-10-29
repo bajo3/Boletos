@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const motorVehiculo = document.getElementById("vehiculoMotor").value;
 
         // Reemplaza los marcadores de posición en el contrato
-        document.getElementById("vendedorNombreCompleto").textContent = vendedorNombre + " " + vendedorApellido;
+document.getElementById("vendedorNombreCompleto").textContent = vendedorNombre + " " + vendedorApellido;
         document.getElementById("vendedorDni").textContent = vendedorDni;
         document.getElementById("compradorDni").textContent = compradorDni;
         document.getElementById("vendedorDireccion").textContent = vendedorDireccion;
@@ -59,6 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("patenteVehiculo").textContent = patenteVehiculo;
         document.getElementById("chasisVehiculo").textContent = chasisVehiculo;
         document.getElementById("motorVehiculo").textContent = motorVehiculo;
+        document.getElementById("vendedorNombreCompletoContrato").textContent = vendedorNombre + " " + vendedorApellido;
+        document.getElementById("compradorNombreCompletoContrato").textContent = compradorNombre + " " + compradorApellido;
+
 
         document.getElementById('dia').textContent = dia;
         document.getElementById('mes').textContent = mes;
