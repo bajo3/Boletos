@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const vendedorDireccion = document.getElementById("direccionVendedor").value;
         const vendedorTelefono = document.getElementById("telefonoVendedor").value;
         const vendedorLocalidad = document.getElementById("localidadVendedor").value;
+        const ventaLocalidad = document.getElementById("localidadVendedor").value
         const ventaPrecioElement = document.getElementById("precioVenta");
         const ventaPrecio = Number(ventaPrecioElement.value); 
         const precioFormateado = ventaPrecio.toLocaleString('es-AR'); // 'es-AR' es el código de lenguaje y región para español en Argentina
@@ -51,7 +52,7 @@ document.getElementById("vendedorNombreCompleto").textContent = vendedorNombre +
         document.getElementById("compradorDireccion").textContent = compradorDireccion;
         document.getElementById("compradorTelefono").textContent = compradorTelefono;
         document.getElementById("compradorLocalidad").textContent = compradorLocalidad;
-
+        document.getElementById("localidadVenta").textContent = ventaLocalidad;
         document.getElementById("marcaVehiculo").textContent = marcaVehiculo;
         document.getElementById("modeloVehiculo").textContent = modeloVehiculo;
         document.getElementById("versionVehiculo").textContent = versionVehiculo;
@@ -71,21 +72,13 @@ document.getElementById("vendedorNombreCompleto").textContent = vendedorNombre +
         contratoContainer.style.display = "block";
         imprimirContratoBtn.style.display = "block";
 
-        console.log("marcaVehiculo element:", document.getElementById("marcaVehiculo"));
-        console.log("marcaVehiculo value:", marcaVehiculo);
-        console.log(dia)
-        console.log("Valor del nombre del comprador:", compradorNombre);
-        console.log("compradorNombre:", compradorNombre);
-console.log("compradorApellido:", compradorApellido);
-
-
     });
 
     imprimirContratoBtn.addEventListener("click", () => {
         imprimirContratoBtn.style.display = "none";
       
         const contenidoContrato = contratoContainer.innerHTML;
-        const ventanaImpresion = window.open("", "", "width=600,height=600");
+        const ventanaImpresion = window.open("", "", "width=800,height=800");
       
         ventanaImpresion.document.open();
         ventanaImpresion.document.write(`
@@ -100,6 +93,11 @@ console.log("compradorApellido:", compradorApellido);
                 body {
                   margin: 0;
                 }
+                .container-datos{
+                  display: flex;
+                  justify-content: space-between;
+                  color: black;
+                  }
               </style>
             </head>
             <body>${contenidoContrato}</body>
@@ -112,4 +110,12 @@ console.log("compradorApellido:", compradorApellido);
       
         imprimirContratoBtn.style.display = "block";
       });
+
+      
+
+
+    
+  
+ 
+
 });

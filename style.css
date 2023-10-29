@@ -78,10 +78,14 @@ text-align: center;
   display: flex;
   align-items: center;
   text-align: justify;
-  flex-wrap: wrap;
   border: 1px solid black;
 }
 
+@media screen and (max-width:600px){
+  .container-datos{
+    flex-wrap: wrap;
+  }
+}
 span{
   font-weight: bold;
   text-decoration: underline;
@@ -98,4 +102,22 @@ justify-content: space-between;
 color: black;
 }
 
+
+@page print {
+  /* Estilos para la versión impresa */
+  .container-datos {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+  .contrato-firmas {
+    flex: 1 !important;
+    margin-right: 20px !important;
+  }
+
+  .contrato-texto {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
 

@@ -172,14 +172,14 @@
         vehiculo, al igual que deudas emergentes de patentes municipales y/o multas. Con absoluta conformidad del
         Comprador.----------------------------------------------------------------------------------------------------/ <br>
         
-        En: <span id="vendedorLocalidad"></span> a los: <span id="dia"></span> del mes de: <span id="mes"></span> año: <span id="anio"></span> se firman dos ejemplares del mismo tenor a un solo efecto. <br>
+        En: <span id="localidadVenta"></span> a los: <span id="dia"></span> del mes de: <span id="mes"></span> año: <span id="anio"></span> se firman dos ejemplares del mismo tenor a un solo efecto. <br>
 
         OBSERVACIONES: <span id="observaciones"></span>
 <div class="container-datos">
         <div class="contrato-firmas">
             <h3>Comprador</h3>
             <div class="contrato-texto">
-                <p>Nombre: <span id="vendedorNombreCompletoContrato"></span></p>
+                <p>Nombre: <span id="compradorNombreCompletoContrato"></span></p>
                 <p>Dni: <span id="compradorDni"></span></p>
                 <p>Direccion: <span id="compradorDireccion"></span> </p>
                 <p>Localidad: <span id="compradorLocalidad"></span> </p>
@@ -193,7 +193,7 @@
         <div class="contrato-firmas">
             <h3>Vendedor</h3>
             <div class="contrato-texto">
-                <p>Nombre: <span id="compradorNombreCompletoContrato"></span></p>
+                <p>Nombre: <span id="vendedorNombreCompletoContrato"></span></p>
                 <p>Dni: <span id="vendedorDni"></span></p>
                 <p>Direccion: <span id="vendedorDireccion"></span> </p>
                 <p>Localidad: <span id="vendedorLocalidad"></span> </p>
@@ -203,8 +203,9 @@
         </div>
         </div>
 
-        </p>
     <button id="imprimirContrato" style="display: none;">Imprimir Contrato</button>
+    <button id="descargarPDF" style="display: none;">Descargar como PDF</button>
+
     <div class="contrato-container" id="contratoContainer">
 
         
@@ -212,7 +213,10 @@
     </div>
 
     <button id="imprimirContrato" style="display: none;">Imprimir Contrato</button>
+    <button id="descargarPDF">Descargar como PDF</button>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="main.js"></script>
 </body>
 
