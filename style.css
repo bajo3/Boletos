@@ -10,6 +10,7 @@ body {
    text-align: center;
     margin: 0 auto;
     padding: 20px;
+   
 }
 
 
@@ -42,6 +43,8 @@ body {
     margin-right: 17px;
 
   }
+
+
   
   
 
@@ -65,3 +68,34 @@ button {
     margin-top: 20px;
     margin: auto;
 }
+
+.contrato-container h1{
+  border: 2px solid black;
+text-align: center;
+}
+
+.info-auto{
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  flex-wrap: wrap;
+  border: 1px solid black;
+}
+
+span{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.info-auto p{
+  font-weight: lighter;
+
+}
+
+.container-datos{
+display: flex;
+justify-content: space-between;
+color: black;
+}
+
+

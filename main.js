@@ -3,9 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const contratoContainer = document.getElementById("contratoContainer");
     const fecha = new Date();
     const dia = fecha.getDate();
-    const mes = fecha.getMonth() + 1;
+    const mesesEnEspanol = [
+      "enero", "febrero", "marzo", "abril", "mayo", "junio",
+      "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+    ];
+    const mes = mesesEnEspanol[fecha.getMonth()];
+
     const anio = fecha.getFullYear();
     const imprimirContratoBtn = document.getElementById("imprimirContrato");
+
+    
 
     generarContratoBtn.addEventListener("click", function () {
         // Captura los valores de los campos de entrada
@@ -14,13 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const vendedorDni = document.getElementById("dniVendedor").value;
         const vendedorDireccion = document.getElementById("direccionVendedor").value;
         const vendedorTelefono = document.getElementById("telefonoVendedor").value;
-        const vendedorEmail = document.getElementById("emailVendedor").value;
+        const vendedorLocalidad = document.getElementById("localidadVendedor").value;
+        const ventaPrecioElement = document.getElementById("precioVenta");
+        const ventaPrecio = Number(ventaPrecioElement.value); 
+        const precioFormateado = ventaPrecio.toLocaleString('es-AR'); // 'es-AR' es el código de lenguaje y región para español en Argentina
         const compradorNombre = document.getElementById("nombreComprador").value;
         const compradorApellido = document.getElementById("apellidoComprador").value;
         const compradorDni = document.getElementById("dniComprador").value;
         const compradorDireccion = document.getElementById("direccionComprador").value;
-        const compradorTelefono = document.getElementById("telefonoComprador").value;
-        const compradorEmail = document.getElementById("emailComprador").value;
+       const compradorTelefono = document.getElementById("telefonoComprador").value;
+        const compradorLocalidad = document.getElementById("localidadComprador").value;
         const marcaVehiculo = document.getElementById("vehiculoMarca").value;
         const modeloVehiculo = document.getElementById("vehiculoModelo").value;
         const versionVehiculo = document.getElementById("vehiculoVersion").value;
@@ -35,11 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("compradorDni").textContent = compradorDni;
         document.getElementById("vendedorDireccion").textContent = vendedorDireccion;
         document.getElementById("vendedorTelefono").textContent = vendedorTelefono;
-        document.getElementById("vendedorEmail").textContent = vendedorEmail;
+        document.getElementById("vendedorLocalidad").textContent = vendedorLocalidad;
+        document.getElementById("ventaPrecio").textContent = '$' + precioFormateado;
         document.getElementById("compradorNombreCompleto").textContent = compradorNombre + " " + compradorApellido;
         document.getElementById("compradorDireccion").textContent = compradorDireccion;
         document.getElementById("compradorTelefono").textContent = compradorTelefono;
-        document.getElementById("compradorEmail").textContent = compradorEmail;
+        document.getElementById("compradorLocalidad").textContent = compradorLocalidad;
 
         document.getElementById("marcaVehiculo").textContent = marcaVehiculo;
         document.getElementById("modeloVehiculo").textContent = modeloVehiculo;
@@ -48,7 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("patenteVehiculo").textContent = patenteVehiculo;
         document.getElementById("chasisVehiculo").textContent = chasisVehiculo;
         document.getElementById("motorVehiculo").textContent = motorVehiculo;
-        document.getElementById('fechaCreacionContrato').textContent = dia+ "/" + mes + "/" + anio;
+
+        document.getElementById('dia').textContent = dia;
+        document.getElementById('mes').textContent = mes;
+        document.getElementById('anio').textContent = anio;
 
         // Muestra el contrato y el botón de imprimir
         contratoContainer.style.display = "block";
@@ -57,10 +71,42 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("marcaVehiculo element:", document.getElementById("marcaVehiculo"));
         console.log("marcaVehiculo value:", marcaVehiculo);
         console.log(dia)
+        console.log("Valor del nombre del comprador:", compradorNombre);
+        console.log("compradorNombre:", compradorNombre);
+console.log("compradorApellido:", compradorApellido);
+
 
     });
 
-    imprimirContratoBtn.addEventListener("click", function () {
-        // Agrega la lógica de impresión aquí
-    });
+    imprimirContratoBtn.addEventListener("click", () => {
+        imprimirContratoBtn.style.display = "none";
+      
+        const contenidoContrato = contratoContainer.innerHTML;
+        const ventanaImpresion = window.open("", "", "width=600,height=600");
+      
+        ventanaImpresion.document.open();
+        ventanaImpresion.document.write(`
+          <html>
+            <head>
+              <title>Contrato</title>
+              <style>
+                @page {
+                  size: auto;
+                  margin: 0;
+                }
+                body {
+                  margin: 0;
+                }
+              </style>
+            </head>
+            <body>${contenidoContrato}</body>
+          </html>
+        `);
+      
+        ventanaImpresion.document.close();
+        ventanaImpresion.print();
+        ventanaImpresion.close();
+      
+        imprimirContratoBtn.style.display = "block";
+      });
 });

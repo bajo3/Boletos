@@ -42,9 +42,18 @@
                     </div>
 
                     <div class="input-group">
-                        <label for="emailVendedor">Email del Vendedor:</label>
-                        <input type="text" id="emailVendedor" name="emailVendedor" required>
+                        <label for="localidadVendedor">Localidad del Vendedor:</label>
+                        <input type="text" id="localidadVendedor" name="localidadVendedor" required>
                     </div>
+
+                    <div class="input-group">
+                        <label for="precioVenta">Precio de Venta:</label>
+                        <input type="number" id="precioVenta" name="precioVenta" step="any" required>
+                    </div>
+                    
+                    
+                    
+                    
                 </div>
                 <!--Datos del comprador-->
                 <div class="comprador">
@@ -75,154 +84,130 @@
                     </div>
 
                     <div class="input-group">
-                        <label for="emailComprador">Email del Comprador:</label>
-                        <input type="text" id="emailComprador" name="emailComprador" required>
+                        <label for="localidadComprador">localidad del Comprador:</label>
+                        <input type="text" id="localidadComprador" name="localidadComprador" required>
                     </div>
                 </div>
                 <div class="datos-vehiculo">
                     <h2>Datos del vehiculo</h2>
-                <div class="input-group">
-                   
-                    <label for="marcaVehiculo">Marca del Vehículo:</label>
-                    <input type="text" id="vehiculoMarca" name="marcaVehiculo" required>
-                </div>
+                    <div class="input-group">
 
-                <div class="input-group">
-                    <label for="modeloVehiculo">Modelo del Vehículo:</label>
-                    <input type="text" id="vehiculoModelo" name="modeloVehiculo" required>
-                </div>
+                        <label for="marcaVehiculo">Marca del Vehículo:</label>
+                        <input type="text" id="vehiculoMarca" name="marcaVehiculo" required>
+                    </div>
 
-                <div class="input-group">
-                    <label for="versionVehiculo">Versión del Vehículo:</label>
-                    <input type="text" id="vehiculoVersion" name="versionVehiculo" required>
-                </div>
+                    <div class="input-group">
+                        <label for="modeloVehiculo">Modelo del Vehículo:</label>
+                        <input type="text" id="vehiculoModelo" name="modeloVehiculo" required>
+                    </div>
 
-                <div class="input-group">
-                    <label for="anoVehiculo">Año del Vehículo:</label>
-                    <input type="text" id="vehiculoAno" name="anoVehiculo" required>
-                </div>
+                    <div class="input-group">
+                        <label for="versionVehiculo">Versión del Vehículo:</label>
+                        <input type="text" id="vehiculoVersion" name="versionVehiculo" required>
+                    </div>
 
-                <div class="input-group">
-                    <label for="patenteVehiculo">Patente del Vehículo:</label>
-                    <input type="text" id="vehiculoPatente" name="patenteVehiculo" required>
-                </div>
+                    <div class="input-group">
+                        <label for="anoVehiculo">Año del Vehículo:</label>
+                        <input type="text" id="vehiculoAno" name="anoVehiculo" required>
+                    </div>
 
-                <div class="input-group">
-                    <label for="chasisVehiculo">Número de Chasis del Vehículo:</label>
-                    <input type="text" id="vehiculoChasis" name="chasisVehiculo" required>
-                </div>
+                    <div class="input-group">
+                        <label for="patenteVehiculo">Patente del Vehículo:</label>
+                        <input type="text" id="vehiculoPatente" name="patenteVehiculo" required>
+                    </div>
 
-                <div class="input-group">
-                    <label for="motorVehiculo">Número de Motor del Vehículo:</label>
-                    <input type="text" id="vehiculoMotor" name="motorVehiculo" required>
+                    <div class="input-group">
+                        <label for="chasisVehiculo">Número de Chasis del Vehículo:</label>
+                        <input type="text" id="vehiculoChasis" name="chasisVehiculo" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="motorVehiculo">Número de Motor del Vehículo:</label>
+                        <input type="text" id="vehiculoMotor" name="motorVehiculo" required>
+                    </div>
+                    
                 </div>
-            </div>
+                
                 <!-- Agrega otros campos del Comprador aquí -->
             </div>
             <button type="button" id="generarContrato">Generar Contrato</button>
         </form>
     </div>
-
     <div class="contrato-container" id="contratoContainer" style="display: none;">
-        <h1>Boleto de Compraventa de Automotor</h1>
-        <p>Entre el Sr. <span id="vendedorNombreCompleto"></span> de DNI <span id="vendedorDni"></span>, con domicilio
-            en <span id="vendedorDireccion"></span>, Teléfono <span id="vendedorTelefono"></span>, email
-            <span id="vendedorEmail"></span> como parte VENDEDORA y el Sr <span id="compradorNombreCompleto"></span> de
-            DNI <span id="compradorDni"></span>, con domicilio
-            en <span id="compradorDireccion"></span>, Teléfono <span id="compradorTelefono"></span>, email
-            <span id="compradorEmail"></span>
-            en representación de lacomprador
-            empresa Jesus Diaz Automotores como parte COMPRADORA, se celebra el presente boleto de compraventa. Ello
-            conforme a las
-            cláusulas
-            que a continuación se estipulan:
+        <h1>BOLETO DE COMPRA VENTA AUTOMOTOR</h1>
+        <p>
+            Conste por el presente que entre el Señor: <span id="vendedorNombreCompleto"></span> como VENDEDOR y el
+            Señor: <span id="compradorNombreCompleto"></span> como comprador se conviene lo siguiente: <br>
+            El señor: <span id="vendedorNombreCompleto"></span> vende un: auto en las condiciones vistas. <br>
+        <div class="info-auto">
+            <p>  Marca: <span id="marcaVehiculo"></span> Modelo: <span id="modeloVehiculo"></span> Version: <span
+                id="versionVehiculo"></span> Año: <span id="anoVehiculo"></span> Patente: <span
+                id="patenteVehiculo"></span> Motor N°: <span id="motorVehiculo"></span> Chasis N°: <span
+                id="chasisVehiculo"></span></p>
+        </div> <br>
+        En la suma total de pesos: <span id="ventaPrecio"></span> <br>
+        Pagaderos de la siguiente forma: <br>
+        Esta unidad se entrega en el estado de uso en que se encuentra y que el comprador declara conocer, al igual que
+        todo
+        lo concerniente a la marca, modelo, numeros de motor y/o chasis del referido vehiculo, que ha sido revisado y
+        constatado y acepta de plena conformidad, haciendose responsable civil y criminalmente, a partir de la fecha y
+        hora de
+        efectuada esta venta por cualquier accidente, daño y/o perjucio que pudiera ocasionar el vehiculo que es
+        recibido en
+        este acto con su documentacion completa y al dia. El comprador se compromente a efectuar la correspondiente
+        transferencia de dominio del vehiculo dentro de los 90 dias de la fecha, de acuerdo a lo establecido al
+        respecto por
+        la ley 22.977 y sus normas complementarias, interpretativas y/o complementarias, estando a a su exclusivo cargo
+        la
+        totalidad de los gastos que demande la misma y los tramites y gestiones pertinentes, incluyendo la firma del
+        formulario
+        08 o el que a tales fines lo subsista y/o reemplace y/o el otorgamiento de los poderes, todos ello en forma
+        directa con el
+        titular dominal. Transcurrido dicho plazo sin que realizara la transferencia el vendedor no se responsabiliza
+        por los
+        inconvenientes de cualquier indole que pudieran existir anteriores o posteriores a la fecha, que imposibilitan
+        la
+        efectivizacion de dicho tramite, incluyendo embargos y/o prendas o medidas judiciales de cualquier tipo sobre el
+        vehiculo, al igual que deudas emergentes de patentes municipales y/o multas. Con absoluta conformidad del
+        Comprador.----------------------------------------------------------------------------------------------------/ <br>
+        
+        En: <span id="vendedorLocalidad"></span> a los: <span id="dia"></span> del mes de: <span id="mes"></span> año: <span id="anio"></span> se firman dos ejemplares del mismo tenor a un solo efecto. <br>
+
+        OBSERVACIONES: <span id="observaciones"></span>
+<div class="container-datos">
+        <div class="contrato-firmas">
+            <h3>Comprador</h3>
+            <div class="contrato-texto">
+                <p>Nombre: <span id="compradorNombreCompleto"></span></p>
+                <p>Dni: <span id="compradorDni"></span></p>
+                <p>Direccion: <span id="compradorDireccion"></span> </p>
+                <p>Localidad: <span id="compradorLocalidad"></span> </p>
+                <p>Telefono: <span id="compradorTelefono"></span> </p>
+                <p class="firma">Firma</p>
+                <p>Dni: <span id="compradorDni"></span></p>
+
+
+            </div>
+        </div>
+
+        <div class="contrato-firmas">
+            <h3>Vendedor</h3>
+            <div class="contrato-texto">
+                <p>Nombre: <span id="vendedorNombreCompleto"></span></p>
+                <p>Dni: <span id="vendedorDni"></span></p>
+                <p>Direccion: <span id="vendedorDireccion"></span> </p>
+                <p>Localidad: <span id="vendedorLocalidad"></span> </p>
+                <p>Telefono: <span id="vendedorTelefono"></span> </p>
+                <p class="firma">Firma</p>
+            </div>
+        </div>
+        </div>
+
         </p>
-
-        <p>PRIMERO: Del Objeto El objeto del presente consiste en que la parte VENDEDORA vende a la parte COMPRADORA el
-            automotor marca <span id="marcaVehiculo"></span> modelo <span id="modeloVehiculo"></span>. Versión <span
-                id="versionVehiculo"></span> año <span id="anoVehiculo"></span> número de dominio <span
-                id="patenteVehiculo"></span>, número de chasis <span id="chasisVehiculo"></span>, número de motor <span
-                id="motorVehiculo"></span>. Ello en su carácter de único propietario del automotor en adelante
-            denominado “EL VEHÍCULO”.</p>
-
-
-        <p>SEGUNDO: De las características de EL VEHICULO: (A) Se hace entrega de EL VEHICULO en un correcto estado de
-            conservación y con todos los elementos que lo componen, lo cual es reconocido y aceptado por la parte
-            COMPRADORA.</p>
-
-        <p>TERCERO: De las deudas reales de EL VEHICULO. (B) La parte VENDEDORA se hace cargo de toda deuda anterior a
-            la fecha
-            relativa a: impuesto al automotor (también conocida como “patente”) y/o cualquier otra tasa/impuesto que
-            pese
-            sobre EL VEHICULO. Ello por los períodos que se hubieran devengado hasta la fecha de celebración del
-            presente. (b)
-            Como contrapartida, la parte COMPRADORA asume todas las tasas e impuestos que se devenguen a partir del día
-            de la
-            fecha de celebración del presente, las que correrán a su cargo y cuenta. (C) La parte VENDEDORA se hará
-            cargo de
-            toda infracción o multa de tránsito que se adeudare en razón de eventos relacionados con EL VEHICULO
-            anteriores a
-            la fecha de celebración del presente. (d) La parte VENDEDORA entrega EL VEHICULO sin que pese sobre el mismo
-            prenda
-            o gravamen alguno.</p>
-
-        <p>CUARTO: Sobre la Posesión de EL VEHICULO. (a) La parte COMPRADORA recibe en el presente actor de la parte
-            VENDEDORA la posesión de EL VEHICULO. En este acto se ceden y transmiten todos los derechos sobre la cosa
-            objeto
-            del presente. (b) La parte COMPRADORA toma la posesión aceptando el acto y, de este modo, comienza a
-            ostentar
-            sobre EL VEHICULO el título de propietario, siendo el único titular dominial.</p>
-
-        <p>QUINTO: Sobre el precio o contraprestación. Se pacta como único precio que cubre la totalidad de la presente
-            la
-            suma de <span id="precioCompra"></span> <span id="monedaCompra"></span> de los cuales la parte COMPRADORA
-            hace
-            entrega en este mismo acto a la parte VENDEDORA, la cual recibe dicha suma de conformidad, sirviendo el
-            presente de
-            suficiente recibo y carta de pago.</p>
-
-        <p>SEXTO: De la Transferencia (a) El presente acto de transferencia se realiza con el total asentimiento del
-            cónyuge
-            de la parte VENDEDORA el cual firma este documento al pie, ello conforme art. 470 Código Civil y Comercial
-            de la
-            Nación. (b) Es de total y absoluta responsabilidad de la parte VENDEDORA la firma de este y su cónyuge de la
-            pertinente documentación de transferencia, ello en carácter de titular de EL VEHICULO.</p>
-
-        <p>SÉPTIMO: De la Tradición. En el presente acto la parte VENDEDORA hace entrega a la parte COMPRADORA de la
-            posesión
-            y realiza tradición de EL VEHICULO. La entrega material y transmisión de hecho se realiza con todos los
-            derechos
-            que tenía el primero sobre la misma. A su vez, la parte VENDEDORA hace entrega a la parte COMPRADORA de la
-            siguiente documentación: (a) Título de dominio (b) Cédula de Identificación del automóvil (c) Certificado de
-            Verificación policial (d) Comprobantes de pago de impuestos (e) Libre deuda de infracciones (f) Formulario
-            RNPA
-            “08”,
-            suscrito por la parte VENDEDORA y cónyuge en caso de corresponder con certificación notarial de firmas.</p>
-
-        <p>OCTAVO: De los domicilios A los efectos de cualquier notificación que sea motivada por el presente las partes
-            constituyen domicilios contractuales en los denunciados ut supra.</p>
-
-        <p>NOVENO: De la competencia judicial Las partes contratantes se someten exclusivamente a la competencia de
-            XXXXX
-            Manifestando expresa renuncia a cualquier otra que pudiere corresponder.</p>
-
-        <p>DÉCIMO: De la suscripción del presente. En el presente acto se firman dos ejemplares de igual tenor y a
-            idéntico
-            efecto. Se reciben todos de plena conformidad.</p>
-
-        <p>ONCEAVO: De la Responsabilidad. La parte COMPRADORA será único responsable, civil o penalmente, por todo
-            hecho que
-            pudiera causar con EL VEHICULO a partir de la celebración del presente.</p>
-
-        <p>DOCEAVO: Corolario. El presente fue celebrado <span id="fechaCreacionContrato"></span>.</p>
-
-        <button type="button" id="imprimirContrato">Imprimir Contrato</button>
-    </div>
-
-
     <button id="imprimirContrato" style="display: none;">Imprimir Contrato</button>
     <div class="contrato-container" id="contratoContainer">
 
+        
 
     </div>
 
