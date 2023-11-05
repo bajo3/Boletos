@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -147,7 +148,6 @@
                 id="chasisVehiculo"></span></p>
         </div> <br>
         En la suma total de pesos: <span id="ventaPrecio"></span> <br>
-        Pagaderos de la siguiente forma: <br>
         Esta unidad se entrega en el estado de uso en que se encuentra y que el comprador declara conocer, al igual que
         todo
         lo concerniente a la marca, modelo, numeros de motor y/o chasis del referido vehiculo, que ha sido revisado y
@@ -203,21 +203,24 @@
         </div>
         </div>
 
-    <button id="imprimirContrato" style="display: none;">Imprimir Contrato</button>
-    <button id="descargarPDF" style="display: none;">Descargar como PDF</button>
+        <button id="imprimirContrato" style="display: none;">Imprimir Contrato</button>
+        <button id="descargarPDF" style="display: none;">Descargar como PDF</button>
+        
 
     <div class="contrato-container" id="contratoContainer">
 
-        
 
+        
+<!-- Agregar el siguiente comentario condicional para excluir el script del PDF -->
+<!--[if false]>
+<script>
+// Tu fragmento de código JavaScript que aparece al final del PDF aquí
+</script>
+<![endif]-->
     </div>
 
-    <button id="imprimirContrato" style="display: none;">Imprimir Contrato</button>
-    <button id="descargarPDF">Descargar como PDF</button>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

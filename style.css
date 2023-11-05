@@ -97,27 +97,13 @@ span{
 }
 
 .container-datos{
+  margin: 0 40px;
 display: flex;
 justify-content: space-between;
 color: black;
 }
 
 
-@page print {
-  /* Estilos para la versión impresa */
-  .container-datos {
-    display: flex !important;
-    flex-direction: row !important;
-  }
 
-  .contrato-firmas {
-    flex: 1 !important;
-    margin-right: 20px !important;
-  }
 
-  .contrato-texto {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-}
 

@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const generarContratoBtn = document.getElementById("generarContrato");
-    const contratoContainer = document.getElementById("contratoContainer");
+  const generarContratoBtn = document.getElementById("generarContrato");
+  const imprimirContratoBtn = document.getElementById("imprimirContrato");
+  const contratoContainer = document.getElementById("contratoContainer");
+  const descargarPDFBtn = document.getElementById("descargarPDF");
     const fecha = new Date();
     const dia = fecha.getDate();
     const mesesEnEspanol = [
@@ -10,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const mes = mesesEnEspanol[fecha.getMonth()];
 
     const anio = fecha.getFullYear();
-    const imprimirContratoBtn = document.getElementById("imprimirContrato");
 
     
 
@@ -74,48 +75,82 @@ document.getElementById("vendedorNombreCompleto").textContent = vendedorNombre +
 
     });
 
-    imprimirContratoBtn.addEventListener("click", () => {
-        imprimirContratoBtn.style.display = "none";
-      
-        const contenidoContrato = contratoContainer.innerHTML;
-        const ventanaImpresion = window.open("", "", "width=800,height=800");
-      
-        ventanaImpresion.document.open();
-        ventanaImpresion.document.write(`
-          <html>
-            <head>
-              <title>Contrato</title>
-              <style>
-                @page {
-                  size: auto;
-                  margin: 0;
-                }
-                body {
-                  margin: 0;
-                }
-                .container-datos{
-                  display: flex;
-                  justify-content: space-between;
-                  color: black;
-                  }
-              </style>
-            </head>
-            <body>${contenidoContrato}</body>
-          </html>
-        `);
-      
-        ventanaImpresion.document.close();
-        ventanaImpresion.print();
-        ventanaImpresion.close();
-      
-        imprimirContratoBtn.style.display = "block";
-      });
-
-      
-
-
-    
   
+imprimirContratoBtn.addEventListener("click", () => {
+  imprimirContratoBtn.style.display = "none";
+
+  const contenidoContrato = contratoContainer.innerHTML;
+  const ventanaImpresion = window.open("", "", "width=800,height=800");
+
+  ventanaImpresion.document.open();
+  ventanaImpresion.document.write(`
+    <html>
+      <head>
+        <title>Contrato</title>
+        <style>
+          @page {
+            size: auto;
+            margin: 0;
+          }
+          body {
+            margin: 0;
+          }
+          .container-datos{
+            display: flex;
+            justify-content: space-between;
+            color: black;
+            }
+        </style>
+      </head>
+      <body>${contenidoContrato}</body>
+    </html>
+  `);
+
+  ventanaImpresion.document.close();
+  ventanaImpresion.print();
+  ventanaImpresion.close();
+
+  imprimirContratoBtn.style.display = "block";
+});
+
+     
+  
+
+generarContratoBtn.addEventListener("click", function () {
+    // Captura y reemplaza los datos como se describe en tu código
+
+    // Muestra el contrato y los botones
+    contratoContainer.style.display = "block";
+    descargarPDFBtn.style.display = "block";
+});
+
+  descargarPDFBtn.addEventListener("click", () => {
+    // Obtén el contenido del contrato
+    const contenidoContrato = contratoContainer.innerHTML;
+  
+    // Crea una instancia de jsPDF
+    const pdf = new jsPDF();
+  
+    // Convierte el contenido del contrato a un formato HTML válido para jsPDF
+    const contenidoHTML = `
+<html>
+  <head>
+    <title>Contrato</title>
+  </head>
+  <body>${contenidoContrato}</body>
+</html>
+`;
+
+  
+    // Agrega el contenido del contrato al PDF
+    pdf.fromHTML(contenidoHTML, 15, 30, {
+      width: 600, // Ancho del área imprimible
+    });
+  
+    // Guarda el PDF como un archivo con un nombre personalizado
+    const nombreArchivo = "contrato_compra_venta.pdf";
+    pdf.save(nombreArchivo);
+  });
  
 
 });
