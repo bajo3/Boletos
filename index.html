@@ -33,6 +33,17 @@
                     </div>
 
                     <div class="input-group">
+                        <label for="vendedorEstadoCivil">Estado Civil del Vendedor:</label>
+                        <select id="vendedorEstadoCivil" name="vendedorEstadoCivil" required>
+                            <option value="soltero">Soltero</option>
+                            <option value="casado">Casado</option>
+                            <option value="divorciado">Divorciado</option>
+                            <option value="viudo">Viudo</option>
+                        </select>
+                    </div>
+                    
+
+                    <div class="input-group">
                         <label for="direccionVendedor">Domicilio del Vendedor:</label>
                         <input type="text" id="direccionVendedor" name="direccionVendedor" required>
                     </div>
@@ -75,9 +86,22 @@
                     </div>
 
                     <div class="input-group">
+                        <label for="compradorEstadoCivil">Estado Civil del comprador:</label>
+                        <select id="compradorEstadoCivil" name="compradorEstadoCivil" required>
+                            <option valucompradore="soltero">Soltero</option>
+                            <option value="casado">Casado</option>
+                            <option value="divorciado">Divorciado</option>
+                            <option value="viudo">Viudo</option>
+                        </select>
+                    </div>  
+
+                    <div class="input-group">
                         <label for="direccionComprador">Domicilio del Comprador:</label>
                         <input type="text" id="direccionComprador" name="direccionComprador" required>
                     </div>
+
+                  
+                    
 
                     <div class="input-group">
                         <label for="telefonoComprador">Teléfono del Comprador:</label>
@@ -137,19 +161,19 @@
     <div class="contrato-container" id="contratoContainer" style="display: none;">
         <h1>BOLETO DE COMPRA VENTA AUTOMOTOR</h1>
         <p>
-            Entre el Sr.<span id="vendedorNombreCompleto"></span>.  de DNI <span id="vendedorDni"></span> . Y CUIT/L, cuyo estado civil es <span class="estadoCivilVendedor"></span>. , con domicilio en <span id="vendedorDireccion"></span>, como parte VENDEDORA y el Sr. <span id="compradorNombreCompleto"></span> de DNI <span id="compradorDni"></span> , cuyo estado civil es <span class="estadoCivilComprador"></span>., con domicilio en <span id="compradorDireccion"></span>, como parte COMPRADORA, se celebra el presente boleto de compraventa. Ello conforme a las cláusulas que a continuación se estipulan: 
+            Entre el Sr.<span id="vendedorNombreCompleto"></span>.  de DNI <span id="vendedorDni"></span> . Y CUIT/L, cuyo estado civil es <span id="estadoCivilVendedor"></span>. , con domicilio en <span id="vendedorDireccion"></span>, como parte VENDEDORA y el Sr. <span id="compradorNombreCompleto"></span> de DNI <span id="compradorDni"></span> , cuyo estado civil es <span id="estadoCivilComprador"></span>., con domicilio en <span id="compradorDireccion"></span>, como parte COMPRADORA, se celebra el presente boleto de compraventa. Ello conforme a las cláusulas que a continuación se estipulan: 
             <br>
 PRIMERO: Del Objeto 
 <br>
 El objeto del presente consiste en que la parte VENDEDORA vende a la parte COMPRADORA el automotor marca  <span id="marcaVehiculo"></span>. Version: <span
-id="versionVehiculo"></span> . numero de moto: <span id="motorVehiculo"></span>, cuyo numero de carrocería es: <span
+id="modeloVehiculo"></span> . numero de moto: <span id="motorVehiculo"></span>, cuyo numero de carrocería es: <span
 id="chasisVehiculo"></span>,cuyo año de modelo es <span id="anoVehiculo"></span>., matrícula <span
 id="patenteVehiculo"></span>. Ello en su carácter de único propietario del automotor en adelante denominado “EL VEHÍCULO”.
 <br>
 SEGUNDO:  De las características de EL VEHICULO:
 <br>
 a) Se hace entrega de EL VEHICULO en un correcto estado de conservación y con todos los elementos que lo componen, lo cual es reconocido y aceptado por la parte COMPRADORA.
-b) EL VEHICULO tiene un kilometraje recorrido de <span class="kilometros"></span>.Km, lo cual es reconocido y aceptado por la parte COMPRADORA. 
+b) EL VEHICULO tiene un kilometraje recorrido de <span id="kilometros"></span>.Km, lo cual es reconocido y aceptado por la parte COMPRADORA. 
 TERCERO: De las deudas reales de EL VEHICULO.
 a) La parte VENDEDORA se hace cargo de toda deuda anterior a la fecha relativa a: impuesto al automotor (también conocida como “patente”) y/o cualquier otra tasa/impuesto que pese sobre EL VEHICULO. Ello por los períodos que se hubieran devengado hasta la fecha de celebración del presente. 
 b) Como contrapartida, la parte COMPRADORA asume todas las tasas e impuestos que se devenguen a partir del día de la fecha de celebración del presente, las que correrán a su cargo y cuenta.
@@ -161,7 +185,7 @@ b) La parte COMPRADORA toma la posesión aceptando el acto y, de este modo, comi
 <br>
 QUINTO: Sobre el precio o contraprestación.
 <br>
-Se pacta como único precio que cubre la totalidad de la presente la suma de pesos  ………… ($<span id="ventaPrecio"></span>) de los cuales la parte COMPRADORA hace entrega en este mismo acto a la parte VENDEDORA, la cual recibe dicha suma de conformidad, sirviendo el presente de suficiente recibo y carta de pago.
+Se pacta como único precio que cubre la totalidad de la presente la suma de pesos ($<span id="ventaPrecio"></span>) de los cuales la parte COMPRADORA hace entrega en este mismo acto a la parte VENDEDORA, la cual recibe dicha suma de conformidad, sirviendo el presente de suficiente recibo y carta de pago.
 <br>
 SEXTO: De la Transferencia
 <br>
@@ -198,7 +222,7 @@ ONCEAVO: De la Responsabilidad.
 <br>
 La parte COMPRADORA será único responsable, civil o penalmente, por todo hecho que pudiera causar con EL VEHICULO a partir de la celebración del presente.
 DOCEAVO: Corolario.
-El presente fue celebrado en <span id="localidadVenta"></span>. el día <span class="dia"></span>. Del mes de <span class="mes"></span>. De <span class="anio"></span>. 
+El presente fue celebrado en <span id="localidadVenta"></span>. el día <span id="dia"></span>. Del mes de <span id="mes"></span>. De <span id="anio"></span>. 
 
 (Firma de parte VENDEDORA, su cónyuge y de PARTE COMPRADORA)
 
